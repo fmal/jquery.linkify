@@ -1,0 +1,14 @@
+{
+  "name": "jquery.linkify",
+  "version": "0.0.1",
+  "author": {
+    "name": "Filip Malinowski",
+    "email": "crimhead@gmail.com"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jshint": "*",
+    "matchdep": "*"
+  }
+}

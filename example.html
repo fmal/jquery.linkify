@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>linkify demo</title>
+    <script>
+        (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+    </script>
+    <style>
+        .js .is-select-hidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        .demo {
+            margin: 1.5em;
+        }
+
+        .linkify-list {
+            margin: 0 0 1.5em;
+            padding: 0;
+            list-style: none;
+        }
+            .linkify-list > li,
+            .linkify-list > li > a {
+                display: inline-block;
+               *display: inline;
+                zoom: 1;
+            }
+            .linkify-list > li > a {
+                padding: .5em;
+                text-decoration: none;
+                color: #444;
+            }
+            .linkify-list > li > a:hover,
+            .linkify-list > li > a:focus {
+                color: #000;
+                background-color: #ddd;
+            }
+            .linkify-list > li > a.is-selected {
+                background-color: firebrick ;
+                color: #fafafa;
+                font-weight: 700;
+            }
+            .linkify-list > li > .is-selected::before {
+                content: '✓';
+                display: inline-block;
+                margin-right: .25em;
+            }
+
+        .test {
+            background-color: #eee;
+            border-bottom: 2px solid firebrick;
+        }
+        .test > .linkify-list {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <select id="demo1" name="demo1" autocomplete="off" class="is-select-hidden">
+            <option selected="selected">overall</option>
+            <option>week</option>
+            <option>month</option>
+            <option>quarter</option>
+            <option>year</option>
+        </select>
+    </div>
+    <div class="demo">
+        <select id="demo2" name="demo2" autocomplete="off" class="is-select-hidden">
+            <option selected="selected">one-half</option>
+            <option>one-quarter</option>
+            <option>three-eights</option>
+        </select>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="jquery.linkify.js"></script>
+    <script>
+        $(function() {
+            $('#demo2').linkify({
+                callback: function(caption) {
+                    console.log(caption);
+                },
+                extraClass: 'test'
+            });
+            $('#demo1').linkify();
+        });
+    </script>
+</body>
+</html>
