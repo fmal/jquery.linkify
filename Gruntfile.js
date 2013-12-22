@@ -17,7 +17,8 @@ module.exports = function(grunt) {
                         'jQuery',
                         '$'
                     ]
-                }
+                },
+                sourceMap: 'jquery.linkify.min.js.map'
             },
             my_target: {
                 files: {
